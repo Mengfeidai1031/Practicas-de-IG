@@ -1,6 +1,6 @@
 # Prácticas de IG
 
-**Descripción**  
+## Descripción  
 Repositorio creado para guardar todas las prácticas de la asignatura *IG*.
 
 ---
