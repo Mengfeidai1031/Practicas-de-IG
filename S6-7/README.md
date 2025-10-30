@@ -26,7 +26,7 @@ Ejecución: https://qf9vxj.csb.app/
 - Panel informativo que muestra la descripción de cada planeta al seleccionarlo.
 - Control de velocidad de las órbitas mediante un deslizador.
 - Modos de cámara y control ajustables (rotar o mover).
-- Animación guiada con la nave “Xing Xing”, que realiza un recorrido automático visitando cada planeta.
+- Animación guiada con la nave “Xing Xing” (estrella en chino), que realiza un recorrido automático visitando cada planeta.
 
 <img width="1891" height="768" alt="image" src="https://github.com/user-attachments/assets/30cbdfc9-5db0-47b2-96ef-aa9b8337ff5f" />
 
@@ -48,7 +48,7 @@ Ejecución: https://qf9vxj.csb.app/
 
 ## Animación
 
-La animación está protagonizada por Xing Xing, una nave espacial que actúa como guía virtual.
+La animación está protagonizada por Xing Xing (estrella en chino), una nave espacial que actúa como guía virtual.
 Durante el recorrido, la cámara sigue a la nave mientras visita cada planeta, mostrando información educativa sobre ellos en el panel inferior.
 Al finalizar, la animación vuelve automáticamente a la vista libre para seguir explorando manualmente.
 
