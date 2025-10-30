@@ -66,5 +66,18 @@ La solución temporal es usar siempre “Detener animación” antes de volver a
 
 ## Fuentes
 
-
+- Texturas (imagenes):
+  - Planeta tierra: https://github.com/otsedom/otsedom.github.io/blob/main/IG/S7/README.md 
+  - Otros planetas y sol: https://www.solarsystemscope.com/textures/
+- Acciones de teclado y ratón: https://www.toptal.com/developers/keycode 
+- Temario de clase (sobre todo para texturas y sombras):
+  - S6: https://github.com/otsedom/otsedom.github.io/blob/main/IG/S6/README.md
+  - S7: https://github.com/otsedom/otsedom.github.io/blob/main/IG/S7/README.md
+- Uso de IA (Chatgpt 5.0): https://chatgpt.com/
+  - Fondo estrellado
+  - Generación de descripción de planetas
+  - Diseño de menú y botones (función creaInterfaz())
+  - Se apoya para realizar el funcionamiento de la animación tanto en la animación como en detener animación.
+- Imagen de Xing Xing:
+  - Se hace captura de una imagen de google y se quita su fondo haciendolo un png con: https://www.iloveimg.com/es/eliminar-fondo
 
