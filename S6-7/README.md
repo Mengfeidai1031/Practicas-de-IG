@@ -12,7 +12,7 @@ Este proyecto es una simulación 3D interactiva del sistema solar desarrollada c
 
 Codesandbox: https://codesandbox.io/p/sandbox/ig2526-s6-forked-qf9vxj 
 
-Vídeo en Youtube:
+Vídeo en Youtube: https://youtu.be/1rgkOJaMMng 
 
 Ejecución: https://qf9vxj.csb.app/ 
 
