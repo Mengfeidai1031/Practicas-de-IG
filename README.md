@@ -7,7 +7,8 @@ Repositorio creado para guardar todas las prácticas de la asignatura *IG*.
 
 ## Contenido
 
-- [S6-7 — Sistema solar](./S6-7/README.md)  
+- [S6-7 — Sistema solar](./S6-7/README.md)
+- [S8 — Visualización de Tráfico Aéreo (Nueva York)](./S8/README.md)
 
 ---
 
