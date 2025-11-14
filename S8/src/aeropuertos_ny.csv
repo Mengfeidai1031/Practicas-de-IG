@@ -1,0 +1,11 @@
+codigo;nombre;latitud;longitud;tipo;capacidad
+JFK;John F. Kennedy International Airport;40.6413;-73.7781;Internacional;1000
+LGA;LaGuardia Airport;40.7769;-73.8740;Nacional;800
+EWR;Newark Liberty International Airport;40.6895;-74.1745;Internacional;950
+TEB;Teterboro Airport;40.8501;-74.0608;Privado;200
+CDW;Caldwell Airport;40.8752;-74.2814;Regional;150
+MMU;Morristown Municipal Airport;40.7994;-74.4149;Regional;180
+HPN;Westchester County Airport;41.0670;-73.7076;Regional;300
+FRG;Republic Airport;40.7288;-73.4134;Regional;250
+ISP;Long Island MacArthur Airport;40.7952;-73.1002;Nacional;400
+BDR;Igor I. Sikorsky Memorial Airport;41.1635;-73.1262;Regional;220
