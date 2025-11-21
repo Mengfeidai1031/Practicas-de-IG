@@ -8,7 +8,7 @@ Este shader GLSL crea un patrón visual generativo que alterna automáticamente 
 
 ## Los 4 Diseños
 
-### Diseño 1: Círculos de Colores (Segundo 0-1)
+### Diseño 1: Círculos de Colores
 
 **¿Qué ves?**
 - Un círculo en el centro que parece estar "respirando"
