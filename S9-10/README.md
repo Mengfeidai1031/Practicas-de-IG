@@ -74,9 +74,9 @@ Este shader GLSL crea un patrón visual generativo que alterna automáticamente 
 ## ¿Cómo se Crean los Colores?
 
 Los colores en una pantalla se hacen mezclando **tres colores básicos**:
-- 🔴 **Rojo** (Red)
-- 🟢 **Verde** (Green)  
-- 🔵 **Azul** (Blue)
+- **Rojo** (Red)
+- **Verde** (Green)  
+- **Azul** (Blue)
 
 Cada color va de 0 (apagado) a 1 (máximo brillo).
 
