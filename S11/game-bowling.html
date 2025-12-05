@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎳 Juego de Bolos - Arcade Hub</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: "Orbitron", sans-serif;
+        background: #000;
+      }
+
+      canvas {
+        display: block;
+      }
+
+      #ui {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-family: "Press Start 2P", cursive;
+        font-size: 14px;
+        text-shadow: 0 0 10px #0ff;
+        z-index: 10;
+      }
+
+      #score {
+        font-size: 24px;
+        color: #0ff;
+        margin-bottom: 10px;
+      }
+
+      #controls {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.85);
+        border: 2px solid #0ff;
+        border-radius: 10px;
+        padding: 15px 30px;
+        color: white;
+        text-align: center;
+        z-index: 10;
+      }
+
+      #controls p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .key {
+        color: #0ff;
+        font-weight: bold;
+      }
+
+      #back-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background: linear-gradient(145deg, #ff0, #fa0);
+        border: 2px solid #ff0;
+        border-radius: 8px;
+        color: #000;
+        font-family: "Orbitron", sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s;
+        z-index: 10;
+      }
+
+      #back-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #ff0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ui">
+      <div id="score">BOLOS: 10</div>
+      <div>LANZAMIENTOS: 0</div>
+    </div>
+
+    <div id="controls">
+      <p><span class="key">CLICK</span> - Lanzar bola</p>
+      <p><span class="key">R</span> - Reiniciar</p>
+    </div>
+
+    <button
+      id="start-button"
+      style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px 40px;
+        background: linear-gradient(145deg, #0ff, #0aa);
+        border: 3px solid #0ff;
+        border-radius: 15px;
+        color: #000;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 100;
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+      "
+    >
+      COMENZAR
+    </button>
+
+    <a href="index.html" id="back-button">← MENÚ</a>
+
+    <script type="module" src="./game-bowling.js"></script>
+  </body>
+</html>

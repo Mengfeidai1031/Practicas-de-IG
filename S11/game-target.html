@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🔫 Tiro al Blanco - Arcade Hub</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: "Orbitron", sans-serif;
+        background: #000;
+      }
+      canvas {
+        display: block;
+        cursor: crosshair;
+      }
+      #ui {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-family: "Press Start 2P", cursive;
+        font-size: 14px;
+        text-shadow: 0 0 10px #f00;
+        z-index: 10;
+      }
+      #score {
+        font-size: 24px;
+        color: #f00;
+        margin-bottom: 10px;
+      }
+      #controls {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.85);
+        border: 2px solid #f00;
+        border-radius: 10px;
+        padding: 15px 30px;
+        color: white;
+        text-align: center;
+        z-index: 10;
+      }
+      #controls p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+      .key {
+        color: #f00;
+        font-weight: bold;
+      }
+      #back-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background: linear-gradient(145deg, #f00, #a00);
+        border: 2px solid #f00;
+        border-radius: 8px;
+        color: #fff;
+        font-family: "Orbitron", sans-serif;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.3s;
+        z-index: 10;
+      }
+      #back-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px #f00;
+      }
+      #crosshair {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 30px;
+        height: 30px;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 100;
+      }
+      #crosshair::before,
+      #crosshair::after {
+        content: "";
+        position: absolute;
+        background: #ff0000;
+        box-shadow: 0 0 5px #ff0000;
+      }
+      #crosshair::before {
+        left: 50%;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        transform: translateX(-50%);
+      }
+      #crosshair::after {
+        top: 50%;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        transform: translateY(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="crosshair"></div>
+    <div id="ui">
+      <div id="score">PUNTOS: 0</div>
+      <div>BALAS: 20</div>
+    </div>
+    <div id="controls">
+      <p><span class="key">CLICK</span> - Disparar</p>
+      <p><span class="key">R</span> - Reiniciar</p>
+    </div>
+
+    <button
+      id="start-button"
+      style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px 40px;
+        background: linear-gradient(145deg, #f00, #a00);
+        border: 3px solid #f00;
+        border-radius: 15px;
+        color: #fff;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 100;
+        box-shadow: 0 0 30px rgba(255, 0, 0, 0.7);
+      "
+    >
+      COMENZAR
+    </button>
+
+    <a href="index.html" id="back-button">← MENÚ</a>
+    <script type="module" src="./game-target.js"></script>
+  </body>
+</html>
