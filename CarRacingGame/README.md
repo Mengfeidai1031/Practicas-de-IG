@@ -123,7 +123,7 @@ Script principal que genera todas las escenas y componentes de UI automáticamen
 
 ---
 
-## 🚀 Inicio Rápido
+## Inicio Rápido
 
 ### Requisitos
 - Unity 2022.3 LTS o superior
