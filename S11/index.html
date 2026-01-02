@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arcade Gaming Hub - Menú Principal</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: "Orbitron", sans-serif;
+        background: #000;
+      }
+
+      canvas {
+        display: block;
+      }
+
+      #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(
+          circle at 50% 50%,
+          transparent 0%,
+          rgba(0, 0, 0, 0.4) 100%
+        );
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      #title {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        text-align: center;
+      }
+
+      #title h1 {
+        font-family: "Press Start 2P", cursive;
+        font-size: 48px;
+        color: #00ff00;
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00,
+          4px 4px 0px #000;
+        letter-spacing: 4px;
+        margin-bottom: 10px;
+        animation: titleGlow 2s ease-in-out infinite;
+      }
+
+      #title p {
+        font-family: "Orbitron", sans-serif;
+        font-size: 16px;
+        color: #0ff;
+        text-shadow: 0 0 5px #0ff;
+        letter-spacing: 2px;
+      }
+
+      @keyframes titleGlow {
+        0%,
+        100% {
+          text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00,
+            4px 4px 0px #000;
+        }
+        50% {
+          text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00,
+            4px 4px 0px #000;
+        }
+      }
+
+      #controls {
+        position: absolute;
+        top: 180px;
+        left: 30px;
+        background: rgba(0, 0, 0, 0.85);
+        border: 3px solid #0ff;
+        border-radius: 15px;
+        padding: 20px;
+        max-width: 320px;
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+        z-index: 10;
+        animation: slideInLeft 0.5s ease-out;
+      }
+
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-400px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      #controls h2 {
+        font-family: "Press Start 2P", cursive;
+        font-size: 16px;
+        color: #0ff;
+        margin-bottom: 15px;
+        text-shadow: 0 0 10px #0ff;
+      }
+
+      .control-item {
+        display: flex;
+        align-items: center;
+        margin: 12px 0;
+        font-size: 14px;
+        color: #fff;
+      }
+
+      .key {
+        display: inline-block;
+        background: linear-gradient(145deg, #0ff, #0aa);
+        color: #000;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-weight: bold;
+        margin-right: 12px;
+        min-width: 40px;
+        text-align: center;
+        box-shadow: 0 4px 0 #088, 0 0 10px rgba(0, 255, 255, 0.5);
+        font-family: "Orbitron", sans-serif;
+      }
+
+      .control-item span:last-child {
+        flex: 1;
+      }
+
+      #games-menu {
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        animation: slideInRight 0.5s ease-out;
+      }
+
+      @keyframes slideInRight {
+        from {
+          transform: translate(400px, -50%);
+          opacity: 0;
+        }
+        to {
+          transform: translate(0, -50%);
+          opacity: 1;
+        }
+      }
+
+      #games-menu h2 {
+        font-family: "Press Start 2P", cursive;
+        font-size: 18px;
+        color: #ff0;
+        text-align: center;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px #ff0;
+      }
+
+      .game-button {
+        display: block;
+        width: 280px;
+        padding: 20px;
+        margin: 15px 0;
+        background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+        border: 3px solid #ff0;
+        border-radius: 12px;
+        color: #fff;
+        font-family: "Orbitron", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: left;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+        text-decoration: none;
+      }
+
+      .game-button:hover {
+        transform: translateX(-10px) scale(1.05);
+        border-color: #0ff;
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+        background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+      }
+
+      .game-button .game-number {
+        font-family: "Press Start 2P", cursive;
+        font-size: 24px;
+        color: #ff0;
+        display: inline-block;
+        margin-right: 15px;
+        text-shadow: 0 0 10px #ff0;
+      }
+
+      .game-button:hover .game-number {
+        color: #0ff;
+        text-shadow: 0 0 10px #0ff;
+      }
+
+      .game-button .game-title {
+        display: block;
+        font-size: 18px;
+        margin-top: 5px;
+        color: #fff;
+      }
+
+      .game-button .game-desc {
+        display: block;
+        font-size: 12px;
+        margin-top: 8px;
+        color: #888;
+        font-weight: 400;
+      }
+
+      #footer {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: #888;
+        font-size: 12px;
+        z-index: 10;
+      }
+
+      #footer p {
+        margin: 5px 0;
+      }
+
+      #loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "Press Start 2P", cursive;
+        font-size: 20px;
+        color: #0ff;
+        text-shadow: 0 0 20px #0ff;
+        z-index: 100;
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      #scanlines {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 999;
+        background: repeating-linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.1) 0px,
+          rgba(0, 0, 0, 0.1) 1px,
+          transparent 1px,
+          transparent 2px
+        );
+        opacity: 0.1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="overlay"></div>
+    <div id="scanlines"></div>
+
+    <div id="loading">CARGANDO...</div>
+
+    <div id="title">
+      <h1>ARCADE HUB</h1>
+      <p>◄ MENÚ PRINCIPAL ►</p>
+    </div>
+
+    <div id="controls">
+      <h2>⌨ CONTROLES</h2>
+      <div class="control-item">
+        <span class="key">1</span>
+        <span>Idle / Espera</span>
+      </div>
+      <div class="control-item">
+        <span class="key">2</span>
+        <span>Caminar</span>
+      </div>
+      <div class="control-item">
+        <span class="key">3</span>
+        <span>Correr</span>
+      </div>
+      <div class="control-item">
+        <span class="key">4</span>
+        <span>Saltar</span>
+      </div>
+      <div class="control-item">
+        <span class="key">5</span>
+        <span>Bailar</span>
+      </div>
+      <div class="control-item">
+        <span class="key">6</span>
+        <span>Vuelta sorpresa</span>
+      </div>
+      <div class="control-item">
+        <span class="key">SPACE</span>
+        <span>Secuencia completa</span>
+      </div>
+    </div>
+
+    <div id="games-menu">
+      <h2>═ SELECCIONA JUEGO ═</h2>
+      <a href="game-bowling.html" class="game-button">
+        <span class="game-number">01</span>
+        <span class="game-title">🎳 BOLOS</span>
+        <span class="game-desc">Derriba todos los bolos con la bola</span>
+      </a>
+      <a href="game-darts.html" class="game-button">
+        <span class="game-number">02</span>
+        <span class="game-title">🎯 DIANA</span>
+        <span class="game-desc">Lanza dardos al centro de la diana</span>
+      </a>
+      <a href="game-basket.html" class="game-button">
+        <span class="game-number">03</span>
+        <span class="game-title">🧺 CESTA</span>
+        <span class="game-desc">Atrapa la comida que cae del cielo</span>
+      </a>
+      <a href="game-target.html" class="game-button">
+        <span class="game-number">04</span>
+        <span class="game-title">🔫 TIRO AL BLANCO</span>
+        <span class="game-desc">Dispara a los objetivos móviles</span>
+      </a>
+      <a href="game-stack.html" class="game-button">
+        <span class="game-number">05</span>
+        <span class="game-title">📦 APILA CAJAS</span>
+        <span class="game-desc">Construye la torre más alta</span>
+      </a>
+    </div>
+
+    <div id="footer">
+      <p>Usa el ratón para rotar la cámara • Scroll para zoom</p>
+      <p>Proyecto Three.js + Tween.js + GLTFLoader</p>
+    </div>
+
+    <script type="module" src="./menu.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "visualizacion-vuelos-ny",
+  "version": "1.0.0",
+  "description": "Visualización 3D interactiva de tráfico aéreo en el área de Nueva York",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "keywords": [
+    "threejs",
+    "3d",
+    "visualization",
+    "flights",
+    "openstreetmap"
+  ],
+  "author": "Meng Fei",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-glsl": "^2.11.0",
+    "parcel": "^2.11.0"
+  }
+}
